@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="labpc551" name="ListProceduresTest" skipped="0" tests="3" time="4.827" timestamp="2020-01-28T11:40:24">
+<testsuite errors="0" failures="0" hostname="labpc551" name="ListProceduresTest" skipped="0" tests="3" time="5.186" timestamp="2020-01-28T11:50:24">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="GB" />
@@ -56,7 +56,7 @@
     <property name="libs.j2me_common_ant.maven-pom" value="" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner ListProceduresTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\cameronmcneill\Documents\NetBeansProjects\Team6-Agile\Team6-Agile\build\test\results\TEST-ListProceduresTest.xml crashfile=C:\Users\cameronmcneill\Documents\NetBeansProjects\Team6-Agile\Team6-Agile\build\junitvmwatcher4760454558314372608.properties propsfile=C:\Users\cameronmcneill\Documents\NetBeansProjects\Team6-Agile\Team6-Agile\build\junit4913702931565850866.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner ListProceduresTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\cameronmcneill\Documents\NetBeansProjects\Team6-Agile\Team6-Agile\build\test\results\TEST-ListProceduresTest.xml crashfile=C:\Users\cameronmcneill\Documents\NetBeansProjects\Team6-Agile\Team6-Agile\build\junitvmwatcher7206213946172311908.properties propsfile=C:\Users\cameronmcneill\Documents\NetBeansProjects\Team6-Agile\Team6-Agile\build\junit3660305316170762125.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -402,11 +402,99 @@
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
     <property name="libs.javaee-web-api-7.0.javadoc" value="C:\Program Files\NetBeans 8.2\enterprise\docs\javaee-doc-api.jar" />
   </properties>
-  <testcase classname="ListProceduresTest" name="testSearchWithCodeDataExample" time="2.047" />
-  <testcase classname="ListProceduresTest" name="testSearchWithCode" time="1.453" />
-  <testcase classname="ListProceduresTest" name="testGetConnection" time="1.281" />
+  <testcase classname="ListProceduresTest" name="testSearchWithCodeDataExample" time="2.203" />
+  <testcase classname="ListProceduresTest" name="testSearchWithCode" time="1.656" />
+  <testcase classname="ListProceduresTest" name="testGetConnection" time="1.296" />
   <system-out><![CDATA[Test Retreive Data From Database With Sample
+023 - CRANIOTOMY W MAJOR DEVICE IMPLANT OR ACUTE CNS PDX W MCC OR CHEMOTHE
+129569.2963000
+100018
+SCOTTSDALE SHEA MEDICAL CENTER
+9003 EAST SHEA BOULEVARD
+85260
+AZ - Phoenix
+
+023 - CRANIOTOMY W MAJOR DEVICE IMPLANT OR ACUTE CNS PDX W MCC OR CHEMOTHE
+131017.6364000
+360137
+NORTH METRO MEDICAL CENTER
+1400 BRADEN STREET
+72076
+AR - Little Rock
+
+023 - CRANIOTOMY W MAJOR DEVICE IMPLANT OR ACUTE CNS PDX W MCC OR CHEMOTHE
+419562.8235000
+490112
+BANNER DEL E. WEBB MEDICAL CENTER
+14502 WEST MEEKER BOULEVARD
+85375
+AZ - Sun City
+
 Test Retreive Data From Database
+235 - CORONARY BYPASS W/O CARDIAC CATH W MCC
+67324.6666700
+440059
+WHITERIVER PHS INDIAN HOSPITAL
+200 WEST HOSPITAL DRIVE  (PO BOX 860)
+85941
+AZ - Phoenix
+
+239 - AMPUTATION FOR CIRC SYS DISORDERS EXC UPPER LIMB & TOE W MCC
+96874.8571400
+110043
+ALASKA NATIVE MEDICAL CENTER
+4315 DIPLOMACY DR
+99508
+AK - Anchorage
+
+233 - CORONARY BYPASS W CARDIAC CATH W MCC
+139082.3750000
+490005
+LOMPOC VALLEY MEDICAL CENTER
+1515 E OCEAN AVENUE
+93436
+CA - Santa Barbara
+
+233 - CORONARY BYPASS W CARDIAC CATH W MCC
+183051.1579000
+150048
+BAKERSFIELD HEART HOSPITAL
+3001 SILLECT AVENUE
+93308
+CA - Bakersfield
+
+233 - CORONARY BYPASS W CARDIAC CATH W MCC
+205300.4615000
+360039
+PALO VERDE HOSPITAL
+250 NORTH FIRST STREET
+92225
+AZ - Phoenix
+
+233 - CORONARY BYPASS W CARDIAC CATH W MCC
+249257.7333000
+340113
+SALINAS VALLEY MEMORIAL HOSPITAL
+450 EAST ROMIE LANE
+93901
+CA - Salinas
+
+234 - CORONARY BYPASS W CARDIAC CATH W/O MCC
+368123.9200000
+360112
+ARKANSAS HEART HOSPITAL- LLC
+1701 S SHACKLEFORD ROAD
+72211
+AR - Little Rock
+
+233 - CORONARY BYPASS W CARDIAC CATH W MCC
+648473.2632000
+50022
+SHARP MEMORIAL HOSPITAL
+7901 FROST ST
+92123
+CA - San Diego
+
 Test Connection To Database
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>

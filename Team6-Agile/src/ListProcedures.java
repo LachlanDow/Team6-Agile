@@ -26,6 +26,7 @@ public class ListProcedures {
                 results[i][4] = rs.getString(5);
                 results[i][5] = rs.getString(6);
                 results[i][6] = rs.getString(7);
+                rs.next();
             }
             
             return results;

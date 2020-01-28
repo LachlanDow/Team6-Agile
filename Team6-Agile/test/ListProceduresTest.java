@@ -52,7 +52,7 @@ public class ListProceduresTest {
         System.out.println("Test Retreive Data From Database");
         ListProcedures lp = new ListProcedures();
         String[][] results = lp.searchWithCode("23");
-        //printData(results);
+        printData(results);
         assertNotNull(results);
     }
     
@@ -61,7 +61,7 @@ public class ListProceduresTest {
         System.out.println("Test Retreive Data From Database With Sample");
         ListProcedures lp = new ListProcedures();
         String[][] results = lp.searchWithCode("023");
-        //printData(results);
+        printData(results);
         assertEquals("Value returned was not what was wanted",
                      "023 - CRANIOTOMY W MAJOR DEVICE IMPLANT OR ACUTE CNS PDX W MCC OR CHEMOTHE",
                      results[0][0]);
