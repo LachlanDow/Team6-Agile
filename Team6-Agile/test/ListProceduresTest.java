@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author stevenmarshall
+ * @author cameronmcneill
  */
 public class ListProceduresTest {
     
@@ -36,18 +36,21 @@ public class ListProceduresTest {
     public void tearDown() {
     }
 
-    /**
-     * Test of doSomething method, of class ListProcedures.
-     */
+    
     @Test
-    public void testDoSomething() {
-        System.out.println("doSomething");
-        ListProcedures instance = new ListProcedures();
-        boolean expResult = false;
-        boolean result = instance.doSomething();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void restConnectionToDatabase() {
+        System.out.println("Test Connection To Database");
+        ListProcedures lp = new ListProcedures();
+        boolean result = lp.connectToDatabase();
+        assertTrue("Failed to connect to database", result);
     }
+    
+//    @Test
+//    public void restConnectToDatabase() {
+//        System.out.println("Test Database Connection");
+//        ListProcedures lp = new ListProcedures();
+//        boolean result = lp.connectToDatabase();
+//        assertTrue("Failed to connect to database", result);
+//    }
     
 }
