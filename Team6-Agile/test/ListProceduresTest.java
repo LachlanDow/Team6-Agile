@@ -11,6 +11,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+import java.sql.*;
+
 /**
  *
  * @author cameronmcneill
@@ -38,19 +40,52 @@ public class ListProceduresTest {
 
     
     @Test
-    public void restConnectionToDatabase() {
+    public void testGetConnection() {
         System.out.println("Test Connection To Database");
         ListProcedures lp = new ListProcedures();
-        boolean result = lp.connectToDatabase();
-        assertTrue("Failed to connect to database", result);
+        Statement results = lp.getConnection();        
+        assertNotNull(results);
     }
     
-//    @Test
-//    public void restConnectToDatabase() {
-//        System.out.println("Test Database Connection");
-//        ListProcedures lp = new ListProcedures();
-//        boolean result = lp.connectToDatabase();
-//        assertTrue("Failed to connect to database", result);
-//    }
+    @Test
+    public void testSearchWithCode() {
+        System.out.println("Test Retreive Data From Database");
+        ListProcedures lp = new ListProcedures();
+        String[][] results = lp.searchWithCode("23");
+        //printData(results);
+        assertNotNull(results);
+    }
+    
+    @Test
+    public void testSearchWithCodeDataExample() {
+        System.out.println("Test Retreive Data From Database With Sample");
+        ListProcedures lp = new ListProcedures();
+        String[][] results = lp.searchWithCode("023");
+        //printData(results);
+        assertEquals("Value returned was not what was wanted",
+                     "023 - CRANIOTOMY W MAJOR DEVICE IMPLANT OR ACUTE CNS PDX W MCC OR CHEMOTHE",
+                     results[0][0]);
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    public void printData(String[][] output) {
+        for (int i = 0; i < output.length; i++) {
+            System.out.println(output[i][0]);
+            System.out.println(output[i][1]);
+            System.out.println(output[i][2]);
+            System.out.println(output[i][3]);
+            System.out.println(output[i][4]);
+            System.out.println(output[i][5]);
+            System.out.println(output[i][6]);
+            System.out.println();
+        }
+    }
     
 }
