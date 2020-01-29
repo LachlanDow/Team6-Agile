@@ -46,12 +46,12 @@ public class ListProceduresTest {
         Statement results = lp.getConnection();        
         assertNotNull(results);
     }
-    
+
     @Test
     public void testSearchWithCode() {
-        System.out.println("Test Retreive Data From Database");
+        System.out.println("Test Retreive Data From Database by Code");
         ListProcedures lp = new ListProcedures();
-        String[][] results = lp.searchWithCode("23");
+        String[][] results = lp.searchWithCode("023");
         printData(results);
         assertNotNull(results);
     }
@@ -67,25 +67,32 @@ public class ListProceduresTest {
                      results[0][0]);
     }
     
+
     
+    @Test
+    public void testSearchWithName() {
+        System.out.println("Test Retreive Data From Database by Name");
+        ListProcedures lp = new ListProcedures();
+        String[][] results = lp.searchWithName("CRANIOTOMY");
+        printData(results);
+        assertNotNull(results);
+    }
     
-    
-    
-    
-    
-    
+//    @Test
+//    public void testlistAll(){
+//        ListProcedures lp = new ListProcedures();
+//        String[][] results = lp.listAll();
+//        printData(results);
+//        assertNotNull(results);
+//    }
+   
     
     public void printData(String[][] output) {
         for (int i = 0; i < output.length; i++) {
-            System.out.println(output[i][0]);
-            System.out.println(output[i][1]);
-            System.out.println(output[i][2]);
-            System.out.println(output[i][3]);
-            System.out.println(output[i][4]);
-            System.out.println(output[i][5]);
-            System.out.println(output[i][6]);
+            for(int j = 0; j < 7 ; j++){
+                System.out.println(output[i][j]);
+            }
             System.out.println();
         }
     }
-    
 }

@@ -3,14 +3,44 @@ import java.sql.*;
 public class ListProcedures {
     
     public String[][] searchWithCode(String code) {
-        String[][] results;
-        
         try {            
             ResultSet rs = getConnection().executeQuery("call searchCode('" + code + "')");
-            
-            int width = 7;
-            int height = 0;
-            
+            return getResult(rs);
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+        return null;
+    };
+    
+    
+    public String[][] searchWithName(String Name) {
+        try {            
+            ResultSet rs = getConnection().executeQuery("call searchName('" + Name + "')");
+            return getResult(rs);
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+        return null;
+    };
+    
+//    public String[][] listAll() {
+//        try {          
+//            String sql;
+//            sql = "SELECT * FROM Procedures";
+//            ResultSet rs = getConnection().executeQuery(sql);
+//            return getResult(rs);
+//        } catch (SQLException e) {
+//            System.out.println(e);
+//        }
+//        return null;
+//    };
+    
+    
+    public String[][] getResult(ResultSet rs){
+        String[][] results;
+        int width = 7;
+        int height = 0;
+        try {
             rs.last();
             height = rs.getRow();
             
@@ -19,22 +49,18 @@ public class ListProcedures {
             rs.first();
             
             for (int i = 0; i < height; i++) {
-                results[i][0] = rs.getString(1);
-                results[i][1] = rs.getString(2);
-                results[i][2] = rs.getString(3);
-                results[i][3] = rs.getString(4);
-                results[i][4] = rs.getString(5);
-                results[i][5] = rs.getString(6);
-                results[i][6] = rs.getString(7);
+                for(int j =0 ; j< width ; j++){
+                    results[i][j] = rs.getString(j+1);
+                }
                 rs.next();
             }
-            
             return results;
-        } catch (SQLException e) {
+        }catch (SQLException e) {
             System.out.println(e);
         }
         return null;
-    };
+    }
+    
     
     public Statement getConnection() {
         try {            
