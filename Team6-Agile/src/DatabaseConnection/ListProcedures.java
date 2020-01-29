@@ -1,5 +1,10 @@
+package DatabaseConnection;
+
 import java.sql.*;
 
+/**
+ * @author cameronmcneill
+ */
 public class ListProcedures {
     
     // Call an SQL command on the database and return a 2D array of objects containing the output
