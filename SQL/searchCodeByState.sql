@@ -1,4 +1,4 @@
-CREATE DEFINER=`cammymcn_AglAdm`@`%` PROCEDURE `searchCodeByLocation`(IN code varchar(3), IN state varchar(2))
+CREATE DEFINER=`cammymcn_AglAdm`@`%` PROCEDURE `searchCodeByState`(IN code varchar(3), IN state varchar(2))
 BEGIN
 SELECT DISTINCT
     c.DRG,
