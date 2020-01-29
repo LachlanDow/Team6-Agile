@@ -1,4 +1,4 @@
-CREATE DEFINER=`cammymcn_AglAdm`@`%` PROCEDURE `searchNameInPriceRange`(IN search varchar(50), IN low decimal(15,7), IN high decimal(15,7))
+CREATE DEFINER=`cammymcn_AglAdm`@`%` PROCEDURE `searchNameInPriceRange`(IN search varchar(50), IN low int(7), IN high int(7))
 BEGIN
 SELECT DISTINCT
     c.DRG,

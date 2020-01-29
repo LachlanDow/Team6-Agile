@@ -1,4 +1,4 @@
-CREATE DEFINER=`cammymcn_AglAdm`@`%` PROCEDURE `searchCodeMaxPrice`(IN code varchar(3), IN price decimal(15,7))
+CREATE DEFINER=`cammymcn_AglAdm`@`%` PROCEDURE `searchCodeMaxPrice`(IN code varchar(3), IN price int(7))
 BEGIN
 SELECT DISTINCT
     c.DRG,
