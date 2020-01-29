@@ -47,50 +47,121 @@ public class ListProceduresTest {
         assertNotNull(results);
     }
 
+    
     @Test
     public void testSearchWithCode() {
         System.out.println("Test Retreive Data From Database by Code");
         ListProcedures lp = new ListProcedures();
-        String[][] results = lp.searchWithCode("023");
-        printData(results);
+        Object[][] results = lp.searchWithCode("023");
+        //printData(results);
         assertNotNull(results);
     }
+    
     
     @Test
     public void testSearchWithCodeDataExample() {
         System.out.println("Test Retreive Data From Database With Sample");
         ListProcedures lp = new ListProcedures();
-        String[][] results = lp.searchWithCode("023");
-        printData(results);
+        Object[][] results = lp.searchWithCode("023");
+        //printData(results);
         assertEquals("Value returned was not what was wanted",
                      "023 - CRANIOTOMY W MAJOR DEVICE IMPLANT OR ACUTE CNS PDX W MCC OR CHEMOTHE",
                      results[0][0]);
     }
     
-
+    
+    @Test
+    public void testSearchWithCodeByState() {
+        System.out.println("Test search with code restricted by state");
+        ListProcedures lp = new ListProcedures();
+        Object[][] results = lp.searchWithCode("023", "CA");
+        assertNotNull(results);
+    }
+    
+    @Test
+    public void testSearchWithCodeByStateInPriceRange() {
+        System.out.println("Test search with code restricted by state in a min and max price range");
+        ListProcedures lp = new ListProcedures();
+        Object[][] results = lp.searchWithCode("023", "CA", 1, 10);
+        assertNotNull(results);
+    }
+    
+    @Test
+    public void testSearchWithCodeInPriceRange() {
+        System.out.println("Test search with code restricted by a min and max price range");
+        ListProcedures lp = new ListProcedures();
+        Object[][] results = lp.searchWithCode("023", 1, 10);
+        assertNotNull(results);
+    }
+    
+    @Test
+    public void testSearchWithCodeMaxPrice() {
+        System.out.println("Test search with code restricted by a max price");
+        ListProcedures lp = new ListProcedures();
+        Object[][] results = lp.searchWithCode("023", 10);
+        assertNotNull(results);
+    }
+    
+    
+    
+    
+    
     
     @Test
     public void testSearchWithName() {
         System.out.println("Test Retreive Data From Database by Name");
         ListProcedures lp = new ListProcedures();
-        String[][] results = lp.searchWithName("CRANIOTOMY");
-        printData(results);
+        Object[][] results = lp.searchWithName("CRANIOTOMY");
+        //printData(results);
         assertNotNull(results);
     }
     
-//    @Test
-//    public void testlistAll(){
-//        ListProcedures lp = new ListProcedures();
-//        String[][] results = lp.listAll();
-//        printData(results);
-//        assertNotNull(results);
-//    }
-   
+    @Test
+    public void testSearchWithNameByState() {
+        System.out.println("Test search with code restricted by state");
+        ListProcedures lp = new ListProcedures();
+        Object[][] results = lp.searchWithName("CRANIOTOMY", "CA");
+        assertNotNull(results);
+    }
     
-    public void printData(String[][] output) {
+    @Test
+    public void testSearchWithNameByStateInPriceRange() {
+        System.out.println("Test search with code restricted by state with a mnin and a max price");
+        ListProcedures lp = new ListProcedures();
+        Object[][] results = lp.searchWithName("CRANIOTOMY", "CA", 1, 10);
+        assertNotNull(results);
+    }
+    
+    @Test
+    public void testSearchWithNameInPriceRange() {
+        System.out.println("Test search with code restricted by a min and max price");
+        ListProcedures lp = new ListProcedures();
+        Object[][] results = lp.searchWithName("CRANIOTOMY", 1, 10);
+        assertNotNull(results);
+    }
+    
+    @Test
+    public void testSearchWithNameMaxPrice() {
+        System.out.println("Test search with code restricted by a max price");
+        ListProcedures lp = new ListProcedures();
+        Object[][] results = lp.searchWithName("CRANIOTOMY", 10);
+        assertNotNull(results);
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    public void printData(Object[][] output) {
         for (int i = 0; i < output.length; i++) {
             for(int j = 0; j < 7 ; j++){
-                System.out.println(output[i][j]);
+                System.out.println(output[i][j].toString());
             }
             System.out.println();
         }
