@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="labpc551" name="DatabaseConnection.ListProceduresTest" skipped="0" tests="12" time="31.745" timestamp="2020-01-29T14:48:37">
+<testsuite errors="0" failures="0" hostname="labpc551" name="DatabaseConnection.ListProceduresTest" skipped="0" tests="13" time="39.521" timestamp="2020-01-30T12:09:32">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="GB" />
@@ -58,7 +58,7 @@
     <property name="libs.j2me_common_ant.maven-pom" value="" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner DatabaseConnection.ListProceduresTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\cameronmcneill\Documents\NetBeansProjects\Team6-Agile\Team6-Agile\build\test\results\TEST-DatabaseConnection.ListProceduresTest.xml crashfile=C:\Users\cameronmcneill\Documents\NetBeansProjects\Team6-Agile\Team6-Agile\build\junitvmwatcher3544425732199401287.properties propsfile=C:\Users\cameronmcneill\Documents\NetBeansProjects\Team6-Agile\Team6-Agile\build\junit2715300781490444472.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner DatabaseConnection.ListProceduresTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\cameronmcneill\Documents\NetBeansProjects\Team6-Agile\Team6-Agile\build\test\results\TEST-DatabaseConnection.ListProceduresTest.xml crashfile=C:\Users\cameronmcneill\Documents\NetBeansProjects\Team6-Agile\Team6-Agile\build\junitvmwatcher8015316410855555623.properties propsfile=C:\Users\cameronmcneill\Documents\NetBeansProjects\Team6-Agile\Team6-Agile\build\junit3866215233280204054.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -99,7 +99,7 @@
     <property name="javac.debug" value="true" />
     <property name="javadoc.splitindex" value="true" />
     <property name="file.separator" value="\" />
-    <property name="javac.includesfile.binary" value="C:\Users\cameronmcneill\Documents\NetBeansProjects\Team6-Agile\Team6-Agile\null569131104" />
+    <property name="javac.includesfile.binary" value="C:\Users\cameronmcneill\Documents\NetBeansProjects\Team6-Agile\Team6-Agile\null296381665" />
     <property name="libs.junit_4.maven-pom" value="" />
     <property name="mkdist.disabled" value="false" />
     <property name="javac.test.processorpath" value="C:\Users\cameronmcneill\Documents\Year 3\mysql-connector-java-8.0.19\mysql-connector-java-8.0.19.jar:build/classes:C:\Program Files\NetBeans 8.2\platform\modules\ext\junit-4.12.jar:C:\Program Files\NetBeans 8.2\platform\modules\ext\hamcrest-core-1.3.jar" />
@@ -408,22 +408,25 @@
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
     <property name="libs.javaee-web-api-7.0.javadoc" value="C:\Program Files\NetBeans 8.2\enterprise\docs\javaee-doc-api.jar" />
   </properties>
-  <testcase classname="DatabaseConnection.ListProceduresTest" name="getDataNameState" time="2.938" />
-  <testcase classname="DatabaseConnection.ListProceduresTest" name="testSearchWithCodeDataExample" time="4.967" />
-  <testcase classname="DatabaseConnection.ListProceduresTest" name="getDataCode" time="4.941" />
-  <testcase classname="DatabaseConnection.ListProceduresTest" name="getDataName" time="5.938" />
-  <testcase classname="DatabaseConnection.ListProceduresTest" name="getDataNameMaxPrice" time="1.615" />
-  <testcase classname="DatabaseConnection.ListProceduresTest" name="getDataNameStatePriceRange" time="1.509" />
-  <testcase classname="DatabaseConnection.ListProceduresTest" name="getDataCodeStatePriceRange" time="1.485" />
-  <testcase classname="DatabaseConnection.ListProceduresTest" name="getDataNamePriceRange" time="1.609" />
-  <testcase classname="DatabaseConnection.ListProceduresTest" name="getDataCodeState" time="1.861" />
-  <testcase classname="DatabaseConnection.ListProceduresTest" name="getDataCodePriceRange" time="1.592" />
-  <testcase classname="DatabaseConnection.ListProceduresTest" name="getDataCodeMaxPrice" time="1.622" />
-  <testcase classname="DatabaseConnection.ListProceduresTest" name="testGetMaxPrice" time="1.562" />
-  <system-out><![CDATA[getData - Procedure Name - State
+  <testcase classname="DatabaseConnection.ListProceduresTest" name="getDataNameCount" time="7.139" />
+  <testcase classname="DatabaseConnection.ListProceduresTest" name="getDataNameState" time="2.375" />
+  <testcase classname="DatabaseConnection.ListProceduresTest" name="testSearchWithCodeDataExample" time="5.264" />
+  <testcase classname="DatabaseConnection.ListProceduresTest" name="getDataCode" time="5.264" />
+  <testcase classname="DatabaseConnection.ListProceduresTest" name="getDataName" time="6.139" />
+  <testcase classname="DatabaseConnection.ListProceduresTest" name="getDataNameMaxPrice" time="1.625" />
+  <testcase classname="DatabaseConnection.ListProceduresTest" name="getDataNameStatePriceRange" time="1.546" />
+  <testcase classname="DatabaseConnection.ListProceduresTest" name="getDataCodeStatePriceRange" time="1.609" />
+  <testcase classname="DatabaseConnection.ListProceduresTest" name="getDataNamePriceRange" time="1.641" />
+  <testcase classname="DatabaseConnection.ListProceduresTest" name="getDataCodeState" time="1.921" />
+  <testcase classname="DatabaseConnection.ListProceduresTest" name="getDataCodePriceRange" time="1.656" />
+  <testcase classname="DatabaseConnection.ListProceduresTest" name="getDataCodeMaxPrice" time="1.624" />
+  <testcase classname="DatabaseConnection.ListProceduresTest" name="testGetMaxPrice" time="1.625" />
+  <system-out><![CDATA[getData - Procedure Name - Count
+getData - Procedure Name - State
 testSearchWithCodeDataExample
 getData - Procedure Code
 getData - Procedure Name
+1368
 getData - Procedure Name - Max Price
 getData - Procedure Name - State in Price Range
 getData - Procedure Code - State in Price Range

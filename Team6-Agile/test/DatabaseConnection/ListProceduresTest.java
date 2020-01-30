@@ -126,6 +126,15 @@ public class ListProceduresTest {
     }
     
     
+    @Test
+    public void getDataNameCount() {
+        System.out.println("getData - Procedure Name - Count");
+        ListProcedures lp = new ListProcedures();
+        Object[][] results = lp.getData("CRANIOTOMY");
+        assertEquals(1368, results.length);
+    }
+    
+    
     
     @Test
     public void testGetMaxPrice() {
