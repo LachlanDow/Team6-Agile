@@ -271,8 +271,8 @@ public class results extends javax.swing.JFrame {
        int minimum = MinimumSlider.getValue();
        int maximum = MaximumSlider.getValue();
        
-        ListProcedures yes = new ListProcedures();
-        Object[][] display_table = yes.searchWithCode(searchBar.getText(), minimum, maximum);
+        DatabaseConnection.ListProcedures yes = new DatabaseConnection.ListProcedures();
+        Object[][] display_table = yes.getData(searchBar.getText(), minimum, maximum);
        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         
        model.setRowCount(0);
