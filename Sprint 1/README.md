@@ -1,6 +1,6 @@
 # Sprint 1
 
-## Day 1 - Scrum Meeting summary
+## Day 1 -  Monday 9am - Scrum Meeting summary
 The Scrum Master for this meeting was Cameron
 
 ### Members Present:
@@ -13,7 +13,7 @@ Our first Scrum consisted of our team reviewing the user stroies we created the 
 
 ---
 
-## Day 2 - Scrum Meeting summary
+## Day 2 - Tuesday 9am -  Scrum Meeting summary
 The Scrum Master for this meeting was Cameron
 
 ### Members Present:
@@ -27,7 +27,7 @@ We started this Scrum by discussing what each individual achieved from the previ
 
 ---
 
-## Day 3 - Scrum Meeting summary
+## Day 3 - Wednesday 9am - Scrum Meeting summary
 The Scrum Master for this meeting was Cameron
 
 ### Members Present:
@@ -37,12 +37,26 @@ Cameron, Steven, Lachlan, Nicole, Andrew, Cai
 
 
 ### Summary of Conversation:
-
+Day 3 was the Scrum we recorded. We started by discussing what we accomplished from yesterday. We all agreed that Day 2 was much more succesful than Day 1. Andrew and Nicole had managed to upload the CSV file into the Database and wrote stored procedures. Lachlan completed his part of the GUI. Cameron and Cai set up connections to the Database and started outputting data. Steven continued with his GUI development. discussing our goals for the day, Andrew and Nicole agreed to continue with stored procedures, Steven and Lachlan were to continue with the GUI and start integrating it. Cameron and Cai were to pulling data from the Database for Lachlan and Steven to work with.
 
 ---
 
-## Day [X] - Scrum Meeting summary
-The Scrum Master for this meeting was **Mike Crabb**
+## Day 4 - Thursday 11:30am - Scrum Meeting summary
+The Scrum Master for this meeting was Cameron
+
+### Members Present:
+Cameron, Steven, Lachlan, Nicole, Andrew, Cai
+
+### Members Not Present:
+
+
+### Summary of Conversation:
+the Day 4 Scrum we all agreed that 
+
+---
+
+## Day 5 - Friday 11:30am - Scrum Meeting summary
+The Scrum Master for this meeting was Cameron
 
 ### Members Present:
 Cameron, Steven, Lachlan, Nicole, Andrew, Cai
@@ -54,3 +68,4 @@ Cameron, Steven, Lachlan, Nicole, Andrew, Cai
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 ---
+
