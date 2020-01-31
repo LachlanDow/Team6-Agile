@@ -6,18 +6,18 @@ SELECT DISTINCT
     c.Total_Discharges,
     v.Name,
     v.Street_Address,
-    v.Zipcode,
-    v.HRR
+    v.HRR,
+    z.Lattiude,
+    z.Longitude
 FROM
-    Procedures AS c,
-    Provider AS v
-WHERE
-    v.ProviderID = c.ProviderID
+    ((Procedures AS c
+    JOIN Provider AS v ON v.ProviderID = c.ProviderID
         AND c.DRG IN (SELECT 
             DRG
         FROM
             Procedures
         WHERE
-            DRG LIKE CONCAT(code, '%'))
+            DRG LIKE CONCAT(code, '%')))
+    JOIN Zipcodes AS z ON v.Zipcode = z.Zipcode)
 ORDER BY c.Average_Total_Payments , c.Total_Discharges DESC;
 END
