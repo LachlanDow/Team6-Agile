@@ -96,7 +96,7 @@ public class ListProcedures {
     
     // Creates the connection to the database and returns a statement object to be used
     // when calling an SQL statement on the database
-    private Statement getConnection() {
+    public Statement getConnection() {
         try {            
             Connection con = DriverManager.getConnection("jdbc:mysql://162.241.24.176:3306/cammymcn_Team6-Agile", 
                                                          "cammymcn_AglUser", 
