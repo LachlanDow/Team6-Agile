@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* Set the size of the div element that contains the map */
+      #map {
+        height: 400px;  /* The height is 400 pixels */
+        width: 100%;  /* The width is the width of the web page */
+       }
+    </style>
+  </head>
+  <body>
+<!--The div element for the map -->
+<div id="map"></div>
+<script>
+// Initialize and add the map
+function initMap() {
+
+  // The location of providerID 10005
+  var mapDefault = {
+    lat: 31.23,
+    lng: -85.4
+  };
+
+  // The map, centered at providerID 10005
+  var map = new google.maps.Map(
+    document.getElementById('map'), {
+      zoom: 8,
+      center: mapDefault
+    });
+
+    // The marker which is used to show the user's live location
+    var currentLocation = new google.maps.Marker({
+      icon: {
+        path: google.maps.SymbolPath.CIRCLE,
+        scale: 5,
+        strokeColor: '#0000FF',
+        strokeOpacity: 1,
+        strokeWeight: 1,
+        fillColor: '#0000FF',
+        fillOpacity: 0.7,
+      },
+      animation: google.maps.Animation.DROP
+    });
+    
+    //The distance in miles used to mark the distance radius
+    var miles = 40;
+    // The circle which is used to mark a distance radius
+    var distanceRadius = new google.maps.Circle({
+    strokeColor: '#0000FF',
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: '#0000FF',
+    fillOpacity: 0.35,
+    radius: miles * 1609.34,
+  });
+}
+
+function showLiveLocation() {
+  var locationInfo; //infoWindow to inform the user of their location on the map
+  locationInfo = new google.maps.InfoWindow();
+
+// Try HTML5 geolocation.
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(function(position) {
+    var userPos = {
+      lat: position.coords.latitude,
+      lng: position.coords.longitude
+    };
+
+    locationInfo.setContent('Location found.');
+    map.setCenter(userPos);
+
+    //Sets the position/center to the user's live location
+    locationInfo.setPosition(userPos);
+    locationInfo.open(map);
+    currentLocation.setPosition(userPos);
+    currentLocation.setMap(map);
+    distanceRadius.setCenter(userPos);
+    //distanceRadius.setMap(map);
+
+  }, function() {
+    handleLocationError(true, locationInfo, map.getCenter());
+  });
+} else {
+  // Browser doesn't support Geolocation
+  handleLocationError(false, locationInfo, map.getCenter());
+}
+}
+
+function handleLocationError(browserHasGeolocation, locationInfo, userPos) {
+locationInfo.setPosition(userPos);
+locationInfo.setContent(browserHasGeolocation ?
+  'Error: The Geolocation service failed.' :
+  'Error: Your browser doesn\'t support geolocation.');
+locationInfo.open(map);
+}
+
+
+function hideLiveLocation() {
+  currentLocation.setMap(null);
+}
+
+function showDistanceRadius() {
+  //distanceRadius.setRadius(miles * 1609.34);
+  distanceRadius.setMap(map);
+}
+
+function hideDistanceRadius() {
+  distanceRadius.setMap(null);
+}
+</script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=API-KEY&callback=initMap">
+    </script>
+  </body>
+</html>
