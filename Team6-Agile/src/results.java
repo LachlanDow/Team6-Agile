@@ -1,9 +1,7 @@
 
-import com.sun.glass.ui.Cursor;
-import java.sql.*;
+
 import javax.swing.table.DefaultTableModel;
-import java.awt.*;
-import java.awt.event.*;
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -273,6 +271,7 @@ public class results extends javax.swing.JFrame {
        
         DatabaseConnection.ListProcedures yes = new DatabaseConnection.ListProcedures();
         Object[][] display_table = yes.getData(searchBar.getText(), minimum, maximum);
+        
        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         
        model.setRowCount(0);
