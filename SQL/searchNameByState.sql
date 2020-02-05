@@ -8,7 +8,8 @@ SELECT DISTINCT
     v.Street_Address,
     v.HRR,
     z.Lattiude,
-    z.Longitude
+    z.Longitude,
+    v.Zipcode
 FROM
     ((Procedures AS c
     JOIN Provider AS v ON v.ProviderID = c.ProviderID
