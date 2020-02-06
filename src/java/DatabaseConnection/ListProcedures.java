@@ -98,13 +98,16 @@ public class ListProcedures {
     // when calling an SQL statement on the database
     public Statement getConnection() {
         try {            
+            
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            
             Connection con = DriverManager.getConnection("jdbc:mysql://162.241.24.176:3306/cammymcn_Team6-Agile", 
                                                          "cammymcn_AglUser", 
                                                          "Team6Agile");
             Statement stmt = con.createStatement();
             
             return stmt;
-        } catch (SQLException e) {
+        } catch (Exception e) {
             System.out.println(e);
         }
         return null;

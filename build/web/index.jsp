@@ -92,7 +92,11 @@
                <br><br>
                <button class="btn btn-cyan" type="submit" onclick="buttonClick()" id="subButton">Search</button>
                <br><br>
-               <h1> <% out.print(dc.getString()); %> </h1>
+               <% 
+                   Object[][] input = lp.getData("023");
+                   for(int i = 0; i < input.length; i++) { %>
+               <h3> <% out.print(input[i][0] + " " + input[i][1]); %> </h3>
+               <% } %>
             </form>
           </div>
           
@@ -103,13 +107,13 @@
 
       <div class="col-lg-9">
 
-<!--        <iframe
+        <iframe
   width="600"
   height="700"
   frameborder="0" style="border:0"
   src="https://www.google.com/maps/embed/v1/place?key=AIzaSyC7ZyEezKMEQ5y-onGLfbeYWiXG6ve--3M
     &q=Space+Needle,Seattle+WA" allowfullscreen>
-</iframe>-->
+</iframe>
     
 
           
