@@ -258,23 +258,53 @@
 //          var uluru2 = {lat: -26.344, lng: 131.036};
           // The map, centered at Uluru
           
-          var inLat = -25;
-          var inLong = 131;
-          var uluru2 = {lat: inLat, lng: inLong};
+          var inLat = 31.2;
+          var inLong = -85.5;
+          var mapCenter = {lat: inLat, lng: inLong};
           
           var map = new google.maps.Map(
-              document.getElementById('map'), {zoom: 4, center: uluru2});
+              document.getElementById('map'), {zoom: 4, center: mapCenter});
           // The marker, positioned at Uluru
           
-          <% Object[][] locs = lp.getLocations(); 
+        <% Object[][] locs = dc.getDistanceList(lp.getData("032"), 31.2, -85.5);
             for (int i = 0; i < 20; i++) {
+                if (Double.parseDouble(locs[i][4].toString()) <= 500) {
           %>
                   
-          var position = {lat: <% out.print(locs[i][2]); %>, lng: <% out.print(locs[i][3]); %>};
+          var position = {lat: <% out.print(locs[i][6]); %>, lng: <% out.print(locs[i][7]); %>};
                   var marker = new google.maps.Marker({position: position, map: map});
           
-          <% } %>
+          <% } 
+            }         
+          %>
           
+          var locationInfo, userPos;
+          var miles = 500;
+          var currentLocation = new google.maps.Marker({
+              icon: {
+                  path: google.maps.SymbolPath.CIRCLE,
+                  scale: 5,
+                  strokeColor: '#0000FF',
+                  strokeOpacity: 1,
+                  strokeWeight: 1,
+                  fillColor: '#0000FF',
+                  fillOpacity: 0.7,},
+              animation: google.maps.Animation.DROP
+          });
+          
+          var distanceRadius = new google.maps.Circle({
+              strokeColor: '#0000FF',
+              strokeOpacity: 0.8,
+              strokeWeight: 2,
+              fillColor: '#0000FF',
+              fillOpacity: 0.35,
+              radius: miles * 1609.34,
+          });
+          
+          locationInfo = new google.maps.InfoWindow();
+          
+          distanceRadius.setCenter(mapCenter);
+          distanceRadius.setMap(map);
             
         }
     </script>
