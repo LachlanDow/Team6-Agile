@@ -120,11 +120,11 @@
                 for (int i = 0; i < input.length; i++) { %>
 
                 <tr>
-                    <th bgcolor="#a4f28d"><%out.print(input[i][0]);%></th>
-                    <th bgcolor="#d8f2d0"><%out.print(input[i][1]);%></th>
-                    <th bgcolor="#a4f28d"><%out.print(input[i][2]);%></th>
-                    <th bgcolor="#d8f2d0"><%out.print(input[i][3]);%></th>
-                    <th bgcolor="#a4f28d"><%out.print(input[i][4]);%></th>
+                    <th bgcolor="#d8d2d0"><%out.print(input[i][0]);%></th>
+                    <th bgcolor="#d8e2d0"><%out.print(input[i][1]);%></th>
+                    <th bgcolor="#d8d2d0"><%out.print(input[i][2]);%></th>
+                    <th bgcolor="#d8e2d0"><%out.print(input[i][3]);%></th>
+                    <th bgcolor="#d8d2d0"><%out.print(input[i][4]);%></th>
                 </tr>            
                 <% }%>
 
@@ -150,9 +150,17 @@
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <script>
-            function buttonClick() {
-                                        document.getElementByID('subButton').innerText = "new Test";
-                                    }
+//            function buttonClick() {
+                                        
+                                        document.getElementById("subButton").onclick = function () { alert('show the information'); };
+                                        
+                                        var el = document.getElementById("subButton");
+                                        if (el.addEventListener)
+                                            el.addEventListener("click", doFunction, false);
+                                        else if (el.attachEvent)
+                                            el.attachEvent('onclick', doFunction);
+                                        
+//                                    }
     </script>
 
 </body>
