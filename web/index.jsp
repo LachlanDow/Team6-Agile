@@ -103,18 +103,20 @@
 
             </div>
             <!-- /.col-lg-9 -->
-
-            <table style="width:100%">
+            
+             <table class = "table">
+                <thead class="thead">
                 <tr>
-                    <th bgcolor="#d1d1d1" style="width:20%"> Code / Name </th>
-                    <th bgcolor="#949494" style="width:20%">  </th>
-                    <th bgcolor="#d1d1d1" style="width:20%">  </th>
-                    <th bgcolor="#949494" style="width:20%">  </th>
-                    <th bgcolor="#d1d1d1" style="width:20%">  </th>
+                    <th scope="col">DRG</th>
+                    <th scope="col">Average Total Payments</th>
+                    <th scope="col">Total Discharges</th>
+                    <th scope="col">Hospital Name</th>
+                    <th scope="col">Address</th>
                 </tr>  
+                </thead>
                 
                 <%
-                Object[][] input = lp.getData("023");
+                Object[][] input = lp.getData("001");
                 for (int i = 0; i < input.length; i++) { %>
 
                 <tr>
@@ -127,6 +129,8 @@
                 <% }%>
 
             </table>
+
+            
         </div>
         <!-- /.row -->
 
@@ -146,7 +150,8 @@
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <script>
-                                    function buttonClick() {
+            function buttonClick() {
+               
                                         document.getElementByID('subButton').innerText = "new Test";
                                     }
     </script>
