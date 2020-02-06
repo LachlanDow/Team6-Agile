@@ -105,7 +105,7 @@
             <!-- /.col-lg-9 -->
             
              <table class = "table">
-                <thead class="thead">
+                <thead class="thead-dark">
                 <tr>
                     <th scope="col">DRG</th>
                     <th scope="col">Average Total Payments</th>
