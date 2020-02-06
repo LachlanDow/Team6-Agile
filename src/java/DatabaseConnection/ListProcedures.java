@@ -67,6 +67,17 @@ public class ListProcedures {
     }
     
     
+    public Object[][] getLocations() {
+        try {
+            ResultSet rs = getConnection().executeQuery("call getProviderDetails()");
+            rs.next();
+            return getResult(rs);
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+        return null;
+    }
+    
     // Takes the result set from the database connection and converts it into an array 
     // of objects. This is used to display the data
     // Return a 2D array of objects    
