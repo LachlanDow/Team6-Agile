@@ -120,11 +120,11 @@
                 for (int i = 0; i < input.length; i++) { %>
 
                 <tr>
-                    <th scope="col"><%out.print(input[i][0]);%></th>
-                    <th scope="col"><%out.print(input[i][1]);%></th>
-                    <th scope="col"><%out.print(input[i][2]);%></th>
-                    <th scope="col"><%out.print(input[i][3]);%></th>
-                    <th scope="col"><%out.print(input[i][4]);%></th>
+                    <th bgcolor="#a4f28d"><%out.print(input[i][0]);%></th>
+                    <th bgcolor="#d8f2d0"><%out.print(input[i][1]);%></th>
+                    <th bgcolor="#a4f28d"><%out.print(input[i][2]);%></th>
+                    <th bgcolor="#d8f2d0"><%out.print(input[i][3]);%></th>
+                    <th bgcolor="#a4f28d"><%out.print(input[i][4]);%></th>
                 </tr>            
                 <% }%>
 
