@@ -7,10 +7,6 @@ import java.sql.SQLException;
  * @author camer
  */
 public class DistanceCalculator {
-
-    public String getString() {
-        return "Hello world";
-    }
     
     public Object[][] getDistanceList(Object[][] input, int zipcode) {
         
