@@ -46,5 +46,35 @@ After yesterdays change of direction, we went back over the product backlog and 
 ---
 
 
+### Day 4 - thursday 11am - Scrum Meeting Summary
+
+### Members Present:
+Cameron, Lachlan, Nicole, Cai, Steven,Andrew
+
+### Members Not Present:
+N/A
+
+### Apologies:
+
+### Summary of Conversation:
+After Trying to reestablish the creation of the project in this new medium. We decided that the tasks for the day was to set up the map on the website and implement the pin functionality and to redesign the UI around this to display the table on the page correctly. We decided to work in larger groups per computer, one from each part of the development process, the UI, the integration and the SQL so that there were experts in every area on each section of code to make the integration easier
+
+---
+
+### Day 5 - thursday 11:30am - Scrum Meeting Summary
+
+### Members Present:
+Cameron, Lachlan, Nicole, Cai, Steven,Andrew
+
+### Members Not Present:
+N/A
+
+### Apologies:
+
+### Summary of Conversation:
+THis meeting we decided what would need to be finalised from the demonstration of the project, including having functioning seach parameters and having these displayed on the map that is on screen when the search button is pressed. We also decided that the GUI should be kept extremely basic to ensure that it works for any level of user. We also decided on who would complete the report and who have which roles for the sprint meeting. 
+
+
+
 
 
