@@ -82,7 +82,7 @@
                                 <input  type="range" min="0" max="100000" id ="maxPrice" class="custom-range"/>
                                 <br>
                                 <br>
-                                <button type="button" class="btn btn-cyan" id="subButton">Search</button>
+                                <button type="button" id="subButton">Search</button>
                                 <br>
                                 <br>
 
@@ -126,23 +126,25 @@
             </div>
             <!-- /.col-lg-9 -->
 
-            <table style="width:100%">
+            <table class="table table-sm table-dark" style="width:100%">
                 <tr>
-                    <th bgcolor="#d1d1d1" style="width:25%"> Code / Name </th>
-                    <th bgcolor="#949494" style="width:25%">  </th>
-                    <th bgcolor="#d1d1d1" style="width:25%">  </th>
-                    <th bgcolor="#949494" style="width:25%">  </th>
+                    <th style="width:40%"> Code / Name </th>
+                    <th style="width:15%"> Average Price </th>
+                    <th style="width:10%"> Discharges </th>
+                    <th style="width:20%"> Hospital Name</th>
+                    <th style="width:15%"> Distance (Miles) </th>
                 </tr>  
 
                 <%
-                    Object[][] input = lp.getLocations();
+                    Object[][] input = dc.getDistanceList(lp.getData("032", 100, 30000), 501);
                     for (int i = 0; i < input.length; i++) { %>
 
                 <tr>
-                    <th bgcolor="#a4f28d"><%out.print(input[i][0]);%></th>
-                    <th bgcolor="#d8f2d0"><%out.print(input[i][1]);%></th>
-                    <th bgcolor="#a4f28d"><%out.print(input[i][2]);%></th>
-                    <th bgcolor="#d8f2d0"><%out.print(input[i][3]);%></th>
+                    <th><%out.print(input[i][0]);%></th>
+                    <th><%out.print(input[i][1]);%></th>
+                    <th><%out.print(input[i][2]);%></th>
+                    <th><%out.print(input[i][3]);%></th>
+                    <th><%out.print(input[i][4]);%></th>
                 </tr>            
                 <% }%>
 
@@ -164,21 +166,25 @@
     <script>
         // Initialize and add the map
         function initMap() {
+            setupMap("032", 501, 500, 0, 30000);
+        }
 
+        function setupMap(code, zipcode, maxDist, minPrice, maxPrice) {
             var inLat = 31.2;
             var inLong = -85.5;
-            var mapCenter = {lat: inLat, lng: inLong};
+                    
+            var mapCenter = {lat: inLat, lng: inLong}; // add zipcode values
 
             var map = new google.maps.Map(
                     document.getElementById('map'), {zoom: 4, center: mapCenter});
 
-            var miles = 500;
-
+            var miles = maxDist;
+            
             var infowindow = new google.maps.InfoWindow();
 
             var marker = [];
 
-        <% Object[][] locs = dc.getDistanceList(lp.getData("032"), 31.2, -85.5);
+        <% Object[][] locs = dc.getDistanceList(lp.getData("032"), 31.2, -85.5); // add min price and max price and code
             for (int i = 0; i < locs.length; i++) {
                 if (Double.parseDouble(locs[i][4].toString()) <= 500) {
         %>
@@ -205,7 +211,9 @@
                     strokeWeight: 1,
                     fillColor: '#0000FF',
                     fillOpacity: 0.7, },
-                animation: google.maps.Animation.DROP
+                    animation: google.maps.Animation.DROP,
+                    position: mapCenter,
+                    map: map
             });
 
             var distanceRadius = new google.maps.Circle({

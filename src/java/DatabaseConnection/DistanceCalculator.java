@@ -80,4 +80,27 @@ public class DistanceCalculator {
         return (r * c);
     }
     
+    
+    public double[] getLatLong(int zipcode) {
+        
+        ListProcedures lp = new ListProcedures();
+        
+        try {
+            double[] output = new double[2];
+            
+            ResultSet rs = lp.getConnection().executeQuery("call findLatLong('" + zipcode + "')");
+            
+            rs.next();
+            
+            output[0] = Double.parseDouble(rs.getString(2));
+            output[1] = Double.parseDouble(rs.getString(3));
+
+            return output;
+            
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+        return null;
+    }
+    
 }

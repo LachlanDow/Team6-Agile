@@ -37,20 +37,51 @@ public class DistanceCalculatorTest {
     public void tearDown() {
     }
 
-    /**
-     * Test of getString method, of class DistanceCalculator.
-     */
+    
+    
+    
+    
+    
+    
+    
     @Test
-    public void Test01() {
-        ListProcedures lp = new ListProcedures();
+    public void TestGetLatLong() {
+        System.out.println("Get Lat Long");
+        
         DistanceCalculator dc = new DistanceCalculator();
         
-        Object[][] results = dc.getDistanceList(lp.getData("032"), 501);
-        System.out.println(results.length);
-        for (int i = 0; i < results.length; i++) {
-            System.out.println(Double.parseDouble(results[i][4].toString()));
-            System.out.println();
-        }
+        double[] output = dc.getLatLong(501);
+        
+        double expLat = 40.81;
+        double expLong = -73.04;
+        
+        assertEquals(expLat, output[0], 0);
+        assertEquals(expLong, output[1], 0);
+        
+        
+        
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 }
