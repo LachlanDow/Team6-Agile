@@ -64,25 +64,26 @@
                     <h1 class="my-4">Search</h1>
                     <div class="list-group">
                         <div>
-                            <form class="custom-range">
+                            <form class="custom-range" action="index.jsp" method="get">
 
                                 <label for="search">Search For procedure </label>
-                                <input type="text" class="form-control" placeholder="Search" id="searchCode"/>
+                                <input type="text" class="form-control" placeholder="Search" id="searchCode" name="searchCode"/>
                                 <br>
+                                
                                 <label for="zipcode">Zipcode </label>
-                                <input type="text" class="form-control" placeholder="Zipcode" id="searchZip"/>
+                                <input type="text" class="form-control" placeholder="Zipcode" id="searchZip" name="searchZip"/>
                                 <br>
-                                <label id="maxDist">Maximum Distance - 2500</label>
-                                <input type="range" min="0" max="5000" id="Distance" class="custom-range"/>
+                                <label id="maxDist">Maximum Distance - 750</label>
+                                <input type="range" min="0" max="1500" id="Distance" class="custom-range" name="distance"/>
                                 <br>
                                 <label id="minPriceDisp">Minimum Price - 50000</label>
-                                <input type="range" min="0" max="100000" id="minPrice" class="custom-range"/>
+                                <input type="range" min="0" max="100000" id="minPrice" class="custom-range" name="minPrice"/>
                                 <br>
                                 <label id="maxPriceDisp">Maximum Price - 50000</label>
-                                <input  type="range" min="0" max="100000" id ="maxPrice" class="custom-range"/>
+                                <input  type="range" min="0" max="100000" id ="maxPrice" class="custom-range" name="maxPrice"/>
                                 <br>
                                 <br>
-                                <button type="button" id="subButton">Search</button>
+                                <button type="submit" value="submit" id="subButton">Search</button>
                                 <br>
                                 <br>
 
@@ -108,11 +109,11 @@
                                         outputString += document.getElementById("Distance").value;
                                         outputString += document.getElementById("minPrice").value;
                                         outputString += document.getElementById("maxPrice").value;
-                                        alert(outputString);
+                                       
                                     });
 
                                 </script>
-
+                                
                             </form>
                         </div>
 
@@ -135,8 +136,10 @@
                     <th style="width:15%"> Distance (Miles) </th>
                 </tr>  
 
+                
+                
                 <%
-                    Object[][] input = dc.getDistanceList(lp.getData("032", 100, 30000), 501);
+                    Object[][] input = dc.getDistanceList(lp.getData("032"), 501);
                     for (int i = 0; i < input.length; i++) { %>
 
                 <tr>
@@ -149,6 +152,7 @@
                 <% }%>
 
             </table>
+            
         </div>
         <!-- /.row -->
 
@@ -166,27 +170,29 @@
     <script>
         // Initialize and add the map
         function initMap() {
-            setupMap("032", 501, 500, 0, 30000);
-        }
+            
+            <%String code = request.getParameter("searchCode");%>
+            <%int zipcode = Integer.parseInt(request.getParameter("searchZip"));%>
+            <%int distance = Integer.parseInt(request.getParameter("distance"));%>
+            <%int minPrice = Integer.parseInt(request.getParameter("minPrice"));%>
+            <%int maxPrice = Integer.parseInt(request.getParameter("maxPrice"));%>
 
-        function setupMap(code, zipcode, maxDist, minPrice, maxPrice) {
-            var inLat = 31.2;
-            var inLong = -85.5;
+            <%double[] coords = dc.getLatLong(zipcode);%>
                     
-            var mapCenter = {lat: inLat, lng: inLong}; // add zipcode values
-
+            var mapCenter = {lat: <% out.print(coords[0]); %>, lng: <% out.print(coords[1]); %>}; // add zipcode values
+            
             var map = new google.maps.Map(
                     document.getElementById('map'), {zoom: 4, center: mapCenter});
 
-            var miles = maxDist;
+            var miles = <% out.print(distance); %>;
             
             var infowindow = new google.maps.InfoWindow();
 
             var marker = [];
 
-        <% Object[][] locs = dc.getDistanceList(lp.getData("032"), 31.2, -85.5); // add min price and max price and code
+        <% Object[][] locs = dc.getDistanceList(lp.getData(code, minPrice, maxPrice), zipcode);
             for (int i = 0; i < locs.length; i++) {
-                if (Double.parseDouble(locs[i][4].toString()) <= 500) {
+                if (Double.parseDouble(locs[i][4].toString()) <= distance) {
         %>
 
             var position = {lat: <% out.print(locs[i][6]); %>, lng: <% out.print(locs[i][7]); %>};
@@ -235,6 +241,7 @@
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHrI2s54VaG8SwRvUWbbji0Bn7bOqXxio&callback=initMap">
     </script>
+    
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
