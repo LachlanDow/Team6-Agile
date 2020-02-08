@@ -1,3 +1,10 @@
+# IMPORTANT NOTE
+Due to the change from a desktop application to a webapp, the github repo is a bit of a mess, we apologise greatly. We did consider creating a new repo however we did not want to lose all the previous commits we had made.
+
+This is the master branch, please find all the documentation here, however, for the actual project folders, please look in the **Working** branch. In here you will find all the project files.
+
+---
+
 # Agile Development
 AC31007/AC51003 Agile Software Engineering - Group Number 6
 
